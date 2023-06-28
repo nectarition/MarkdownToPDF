@@ -32,5 +32,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           echo '📝 Generate PDF: $(date +'%Y-%m-%d %H:%M:%S')'
-          git commit -m '📝 Generate PDF: $(date +'%Y-%m-%d %H:%M:%S')'
+          git commit -m '📝 Generate PDF: $(date +"%Y-%m-%d %H:%M:%S")'
           git push origin HEAD:${GITHUB_REF}
