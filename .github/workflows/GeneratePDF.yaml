@@ -22,11 +22,11 @@ jobs:
 
       - name: 📝 Generate PDF
         run: |
-          npx md-to-pdf --config-file ./.md-pdf/config.json ./dist/**/*.md ./dist/*.md
+          npx md-to-pdf --config-file ./.md-pdf/config.json ./dist/*.md
 
       - name: 🗑 Remove markdown files
         run: |
-          rm -rf ./dist/**/*.md ./dist/*.md
+          rm -rf ./dist/*.md
 
       - name: 🚀 Push generate files to the repository
         env:
