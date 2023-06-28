@@ -1,0 +1,16 @@
+on:
+  push:
+    paths:
+      - 'docs/**'
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 📝 Generate PDF
+        run: |
+          npx md-to-pdf --basedir ./docs
+
+      - run: ls -la
