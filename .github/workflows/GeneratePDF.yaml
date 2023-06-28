@@ -31,7 +31,7 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          DATE=$(date +'%Y-%m-%d %H:%M:%S')
-          echo '📝 Generate PDF: '$DATE
-          git commit -m \"'📝 Generate PDF: '$DATE\"
+          COMMIT_DATE='📝 Generate PDF: '$(date +'%Y-%m-%d %H:%M:%S')
+          echo $COMMIT_DATE
+          git commit -m $COMMIT_DATE
           git push origin HEAD:${GITHUB_REF}
