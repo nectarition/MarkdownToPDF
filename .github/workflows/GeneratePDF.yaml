@@ -11,6 +11,6 @@ jobs:
 
       - name: 📝 Generate PDF
         run: |
-          npx md-to-pdf --basedir ./docs
+          npx md-to-pdf --basedir ./docs ./**/*
 
       - run: ls -la
