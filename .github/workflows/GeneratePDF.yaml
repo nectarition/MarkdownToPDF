@@ -10,8 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: 📂 Create generated PDF directory
+        run: |
+          cp -R ./docs ./dist
+
       - name: 📝 Generate PDF
         run: |
-          npx md-to-pdf --basedir ./docs ./**/*
+          npx md-to-pdf --basedir ./dist ./**/*
 
-      - run: ls ./docs -la
+      - name: 🗑 Remove markdown files
+        run: |
+          rm -rf ./dist/*.md
+
+      - run: ls ./dist -la
