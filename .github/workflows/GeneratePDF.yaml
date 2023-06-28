@@ -33,5 +33,5 @@ jobs:
           git add .
           COMMIT_DATE='📝 Generate PDF: '$(date +'%Y-%m-%d %H:%M:%S')
           echo $COMMIT_DATE
-          git commit -m \"$COMMIT_DATE\"
+          git commit -m "${COMMIT_DATE}"
           git push origin HEAD:${GITHUB_REF}
