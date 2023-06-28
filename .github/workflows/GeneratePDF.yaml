@@ -23,7 +23,7 @@ jobs:
 
       - name: 🗑 Remove markdown files
         run: |
-          rm -rf ./dist/*.md
+          rm -rf ./dist/*.md ./dist/**/*.md
 
       - name: 🚀 Push generate files to the repository
         env:
