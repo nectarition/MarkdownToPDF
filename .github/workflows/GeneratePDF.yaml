@@ -13,8 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: 📂 Create generated PDF directory
+      - name: 🧹 Refresh output direct
         run: |
+          rm -rf ./dist
           cp -R ./docs ./dist
 
       - name: 📝 Generate PDF
@@ -23,7 +24,7 @@ jobs:
 
       - name: 🗑 Remove markdown files
         run: |
-          rm -rf ./dist/*.md ./dist/**/*.md
+          rm -rf ./dist/**/*.md ./dist/*.md
 
       - name: 🚀 Push generate files to the repository
         env:
