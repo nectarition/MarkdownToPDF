@@ -14,4 +14,4 @@ jobs:
         run: |
           npx md-to-pdf --basedir ./docs ./**/*
 
-      - run: ls -la
+      - run: ls ./docs -la
