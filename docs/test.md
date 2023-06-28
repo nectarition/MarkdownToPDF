@@ -57,3 +57,5 @@
 段落２
 
 段落３
+
+![](https://shiokazehs.jp/banner.png)
