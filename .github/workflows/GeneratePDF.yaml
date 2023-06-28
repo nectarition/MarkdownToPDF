@@ -19,7 +19,7 @@ jobs:
 
       - name: 📝 Generate PDF
         run: |
-          npx md-to-pdf ./dist/*
+          npx md-to-pdf ./dist/*.md
 
       - name: 🗑 Remove markdown files
         run: |
