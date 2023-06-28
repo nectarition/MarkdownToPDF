@@ -22,4 +22,11 @@ jobs:
         run: |
           rm -rf ./dist/*.md
 
-      - run: ls ./dist -la
+      - name: 🚀 Push generate files to the repository
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "📝 Generate PDF: "$(date +'%Y-%m-%d %H:%M:%S')
+          git push origin HEAD:${GITHUB_REF}
