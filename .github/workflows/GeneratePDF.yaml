@@ -2,6 +2,8 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - '.github/workflows/GeneratePDF.yaml'
+      - '.md-pdf/**'
       - 'docs/**'
 
 env:
