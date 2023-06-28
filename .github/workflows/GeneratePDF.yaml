@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: 🧹 Refresh output direct
+      - name: 🧹 Refresh output directory
         run: |
           rm -rf ./dist
           cp -R ./docs ./dist
