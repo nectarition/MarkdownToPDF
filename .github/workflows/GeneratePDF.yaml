@@ -4,6 +4,9 @@ on:
     paths:
       - 'docs/**'
 
+env:
+  TZ: Asia/Tokyo
+
 jobs:
   generate-pdf:
     runs-on: ubuntu-latest
