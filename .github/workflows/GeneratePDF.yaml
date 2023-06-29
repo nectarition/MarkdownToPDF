@@ -39,6 +39,7 @@ jobs:
       - name: 🧹 Refresh output directory
         run: |
           rm -rf ${{ env.OUTPUT_DIRECTORY }}
+          mkdir ${{ env.OUTPUT_DIRECTORY }}
           cp -R ${{ env.SOURCE_DIRECTORY }} ${{ env.OUTPUT_DIRECTORY }}
 
       - name: 📝 Generate PDF
