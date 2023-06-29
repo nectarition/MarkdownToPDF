@@ -32,7 +32,7 @@ env:
   TZ: Asia/Tokyo
   SOURCE_DIRECTORY: ${{ inputs.source-directory || './docs' }}
   OUTPUT_DIRECTORY: ${{ inputs.output-directory || './dist' }}
-  NESTED_OUTPUT_DIRECTORY: ${{ env.OUTPUT_DIRECTORY }}${{ inputs.is-nest && '/**' }}
+  NESTED_OUTPUT_DIRECTORY: ${{ inputs.output-directory || './dist' }}${{ inputs.is-nest && '/**' }}
 
 jobs:
   generate-pdf:
