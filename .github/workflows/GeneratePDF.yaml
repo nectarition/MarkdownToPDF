@@ -40,7 +40,7 @@ jobs:
         run: |
           rm -rf ${{ env.OUTPUT_DIRECTORY }}
           cp -R ${{ env.SOURCE_DIRECTORY }} ${{ env.OUTPUT_DIRECTORY }}
-          ls -a ${{ env.OUTPUT_DIRECTORY }}
+          ls -a ${{ env.OUTPUT_DIRECTORY }}/**/*
 
       - name: 📝 Generate PDF
         run: |
