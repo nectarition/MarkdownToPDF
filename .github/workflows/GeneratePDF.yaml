@@ -21,26 +21,30 @@ env:
   SOURCE_DIRECTORY: ${{ inputs.source-directory || './docs' }}
   OUTPUT_DIRECTORY: ${{ inputs.output-directory || './dist' }}
 
-jobs:
+runs:
   generate-pdf:
-    runs-on: ubuntu-latest
+    using: 'composite'
     steps:
       - uses: actions/checkout@v2
 
       - name: 🧹 Refresh output directory
+        shell: bash
         run: |
           rm -rf ${{ env.OUTPUT_DIRECTORY }}
           cp -R ${{ env.SOURCE_DIRECTORY }} ${{ env.OUTPUT_DIRECTORY }}
 
       - name: 📝 Generate PDF
+        shell: bash
         run: |
           npx md-to-pdf --config-file ./.md-pdf/config.json ${{ env.OUTPUT_DIRECTORY }}/*.md
 
       - name: 🗑 Remove markdown files
+        shell: bash
         run: |
           rm -rf ${{ env.OUTPUT_DIRECTORY }}/*.md
 
       - name: 🚀 Push generate files to the repository
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
