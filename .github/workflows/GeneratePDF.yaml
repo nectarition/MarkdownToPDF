@@ -18,8 +18,8 @@ on:
 
 env:
   TZ: Asia/Tokyo
-  SOURCE_DIRECTORY: ${{ inputs.source-directory }}
-  OUTPUT_DIRECTORY: ${{ inputs.output-directory }}
+  SOURCE_DIRECTORY: ${{ inputs.source-directory || './docs' }}
+  OUTPUT_DIRECTORY: ${{ inputs.output-directory || './dist' }}
 
 jobs:
   generate-pdf:
