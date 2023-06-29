@@ -40,6 +40,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: 📂 Activate globstar
+        run: |
+          shopt -s globstar
+
       - name: 🧹 Refresh output directory
         run: |
           rm -rf ${{ env.OUTPUT_DIRECTORY }}
