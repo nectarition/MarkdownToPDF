@@ -1,5 +1,15 @@
+name: '📝 Generate PDF from Markdown'
+
 on:
   workflow_dispatch:
+    inputs:
+      source-directory:
+        default: './docs'
+        type: string
+      output-directory:
+        default: './dist'
+        type: string
+
   push:
     paths:
       - '.github/workflows/GeneratePDF.yaml'
@@ -8,6 +18,8 @@ on:
 
 env:
   TZ: Asia/Tokyo
+  SOURCE_DIRECTORY: ${{ inputs.source-directory }}
+  OUTPUT_DIRECTORY: ${{ inputs.output-directory }}
 
 jobs:
   generate-pdf:
@@ -17,16 +29,16 @@ jobs:
 
       - name: 🧹 Refresh output directory
         run: |
-          rm -rf ./dist
-          cp -R ./docs ./dist
+          rm -rf ${{ env.OUTPUT_DIRECTORY }}
+          cp -R ${{ env.SOURCE_DIRECTORY }} ${{ env.OUTPUT_DIRECTORY }}
 
       - name: 📝 Generate PDF
         run: |
-          npx md-to-pdf --config-file ./.md-pdf/config.json ./dist/*.md
+          npx md-to-pdf --config-file ./.md-pdf/config.json ${{ env.OUTPUT_DIRECTORY }}/*.md
 
       - name: 🗑 Remove markdown files
         run: |
-          rm -rf ./dist/*.md
+          rm -rf ${{ env.OUTPUT_DIRECTORY }}/*.md
 
       - name: 🚀 Push generate files to the repository
         env:
