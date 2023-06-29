@@ -10,6 +10,15 @@ on:
         default: './dist'
         type: string
 
+  workflow_call:
+    inputs:
+      source-directory:
+        default: './docs'
+        type: string
+      output-directory:
+        default: './dist'
+        type: string
+
   push:
     paths:
       - '.github/workflows/GeneratePDF.yaml'
