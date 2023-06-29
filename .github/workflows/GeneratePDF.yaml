@@ -54,6 +54,7 @@ jobs:
 
       - name: 🗑 Remove markdown files
         run: |
+          shopt -s globstar
           rm -rf ${{ env.NESTED_OUTPUT_DIRECTORY }}/*.md
 
       - name: 🚀 Push generate files to the repository
