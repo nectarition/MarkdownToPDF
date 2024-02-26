@@ -40,9 +40,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install fonts
+      - name: 💄 Install font
         run: |
-          sudo apt install fonts-ipafont fonts-ipaexfont
+          sudo apt install fonts-noto-cjk
 
       - name: 🧹 Refresh output directory
         run: |
