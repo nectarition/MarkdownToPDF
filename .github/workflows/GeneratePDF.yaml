@@ -42,7 +42,7 @@ jobs:
 
       - name: Install fonts
         run: |
-          apt install fonts-ipafont fonts-ipaexfont
+          sudo apt install fonts-ipafont fonts-ipaexfont
 
       - name: 🧹 Refresh output directory
         run: |
