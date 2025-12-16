@@ -1,1 +1,10 @@
-{ "stylesheet": [ "./.md-pdf/style.css" ], "pdf_options": { "format": "A4", "margin": "10mm", "printBackground": true } }
+{
+  "stylesheet": [
+    "./.md-pdf/style.css"
+  ],
+  "pdf_options": {
+    "format": "A4",
+    "margin": "10mm",
+    "printBackground": true
+  }
+}

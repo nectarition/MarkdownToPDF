@@ -54,7 +54,7 @@ jobs:
       - name: 📝 Generate PDF
         run: |
           shopt -s globstar
-          npx md-to-pdf --config-file ./.md-pdf/config.json --launch-options '{ \"args\": [\"--no-sandbox\"] }' ${{ env.NESTED_OUTPUT_DIRECTORY }}/*.md
+          npx md-to-pdf --config-file ./.md-pdf/config.json --launch-options '{ "args": ["--no-sandbox"] }' ${{ env.NESTED_OUTPUT_DIRECTORY }}/*.md
 
       - name: 🗑 Remove markdown files
         run: |
